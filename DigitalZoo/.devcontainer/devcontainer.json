@@ -1,0 +1,26 @@
+{
+    "name": "Digital Zoo Java 17",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/maven:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "redhat.java"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current",
+                "java.configuration.runtimes": [{
+                    "name": "JavaSE-17",
+                    "path": "/usr/local/sdkman/candidates/java/current"
+                }]
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "postCreateCommand": "java -version && mvn -v"
+}
